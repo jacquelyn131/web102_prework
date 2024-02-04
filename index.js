@@ -192,13 +192,13 @@ function searchResults() {
     deleteChildElements(gamesContainer);
     // get the query
     let query = document.getElementById("query").value;
-    alert(`query: ${query}`);
+    //alert(`query: ${query}`);
     // filter the list
     let results = GAMES_JSON.filter( (game) => {
         return game.name.toLowerCase().includes(query.toLowerCase());
     });
     // display the games from the search
-    alert(`${results.toString()}`);
+    //alert(`${results.toString()}`);
     addGamesToPage(results);
 };
 // get the search-btn element and add click listener
