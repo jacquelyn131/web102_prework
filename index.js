@@ -184,3 +184,23 @@ document.getElementById("first-game").append(firstPara);
 const secondPara = document.createElement("p");
 secondPara.innerHTML = `<b>${secondGame.name}</b>`;
 document.getElementById("second-game").append(secondPara);
+
+// Customization- search bar
+// function to get search results based on the user query
+function searchResults() {
+    // clear the games
+    deleteChildElements(gamesContainer);
+    // get the query
+    let query = document.getElementById("query").value;
+    alert(`query: ${query}`);
+    // filter the list
+    let results = GAMES_JSON.filter( (game) => {
+        return game.name.toLowerCase().includes(query.toLowerCase());
+    });
+    // display the games from the search
+    alert(`${results.toString()}`);
+    addGamesToPage(results);
+};
+// get the search-btn element and add click listener
+let searchBtn = document.getElementById("search-btn");
+searchBtn.addEventListener("click", searchResults);
